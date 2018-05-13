@@ -17,7 +17,9 @@ import { Dashboard } from './dashboard.component';
 
 // Pages
 import { LoginPage } from '../pages/app/login/login';
+import { RecoveryPasswordPage } from '../pages/app/recovery-password/recovery-password';
 import { HomePage } from '../pages/dashboard/home/home';
+import { ProfilePage } from '../pages/dashboard/profile/profile';
 
 // Pipes
 
@@ -27,9 +29,11 @@ import { HomePage } from '../pages/dashboard/home/home';
 		// App
 		App,
 		LoginPage,
+		RecoveryPasswordPage,
 		// Dashboard
 		Dashboard,
 		HomePage,
+		ProfilePage,
 	],
 	imports: [
 		BrowserModule,
@@ -41,9 +45,11 @@ import { HomePage } from '../pages/dashboard/home/home';
 		// App
 		App,
 		LoginPage,
+		RecoveryPasswordPage,
 		// Dashboard
 		Dashboard,
 		HomePage,
+		ProfilePage,
 	],
 	providers: [
 		StatusBar,

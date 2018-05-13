@@ -8,6 +8,7 @@ import { App } from './app.component';
 
 // Pages
 import { HomePage } from '../pages/dashboard/home/home';
+import { ProfilePage } from '../pages/dashboard/profile/profile';
 
 interface Page {
 	title: string,
@@ -29,6 +30,7 @@ export class Dashboard {
 	) {
 		this.pages = [
 			{ title: 'Inicio', component: HomePage },
+			{ title: 'Perfil', component: ProfilePage },
 		];
 
 		platform.ready().then( () => {

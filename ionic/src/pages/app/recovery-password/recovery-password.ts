@@ -3,14 +3,11 @@ import { NavController } from 'ionic-angular';
 // import { Dialogs } from '@ionic-native/dialogs';
 // import { APIService } from '../../app/service/api.service';
 
-import { Dashboard } from '../../../app/dashboard.component';
-import { RecoveryPasswordPage } from '../recovery-password/recovery-password';
-
 @Component( {
-	selector: 'page-login',
-	templateUrl: 'login.html'
+	selector: 'page-recovery-password',
+	templateUrl: 'recovery-password.html'
 } )
-export class LoginPage {
+export class RecoveryPasswordPage {
 	constructor(
 		// private apiService: APIService,
 		// private dialogs: Dialogs,
@@ -21,11 +18,5 @@ export class LoginPage {
 	}	// end method
 
 	private action(): void {
-		this.navCtrl.setRoot( Dashboard );
-	}	// end method
-
-	private recoveryPassword( event ): void {
-		event.preventDefault();
-		this.navCtrl.push( RecoveryPasswordPage );
 	}	// end method
 }	// enc class
