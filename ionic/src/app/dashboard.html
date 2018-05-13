@@ -1,0 +1,17 @@
+<ion-menu type="overlay" [content]="content">
+	<ion-header class="navbar">
+		<ion-toolbar>
+			<ion-title>Menú</ion-title>
+		</ion-toolbar>
+	</ion-header>
+
+	<ion-content id="menu-content" no-bounce>
+		<ion-list>
+			<button menuClose ion-item *ngFor="let page of pages" (click)="openPage( page )">{{page.title}}</button>
+			<button menuClose ion-item (click)="exit()">Cerrar sesión</button>
+		</ion-list>
+	</ion-content>
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
