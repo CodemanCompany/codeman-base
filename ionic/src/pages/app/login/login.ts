@@ -5,6 +5,7 @@ import { NavController } from 'ionic-angular';
 
 import { Dashboard } from '../../../app/dashboard.component';
 import { RecoveryPasswordPage } from '../recovery-password/recovery-password';
+import { SignUpPage } from '../sign-up/sign-up';
 
 @Component( {
 	selector: 'page-login',
@@ -27,5 +28,10 @@ export class LoginPage {
 	private recoveryPassword( event ): void {
 		event.preventDefault();
 		this.navCtrl.push( RecoveryPasswordPage );
+	}	// end method
+
+	private signUp( event ): void {
+		event.preventDefault();
+		this.navCtrl.push( SignUpPage );
 	}	// end method
 }	// enc class

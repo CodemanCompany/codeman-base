@@ -18,6 +18,8 @@ import { Dashboard } from './dashboard.component';
 // Pages
 import { LoginPage } from '../pages/app/login/login';
 import { RecoveryPasswordPage } from '../pages/app/recovery-password/recovery-password';
+import { SignUpPage } from '../pages/app/sign-up/sign-up';
+
 import { HomePage } from '../pages/dashboard/home/home';
 import { ProfilePage } from '../pages/dashboard/profile/profile';
 
@@ -30,6 +32,7 @@ import { ProfilePage } from '../pages/dashboard/profile/profile';
 		App,
 		LoginPage,
 		RecoveryPasswordPage,
+		SignUpPage,
 		// Dashboard
 		Dashboard,
 		HomePage,
@@ -46,6 +49,7 @@ import { ProfilePage } from '../pages/dashboard/profile/profile';
 		App,
 		LoginPage,
 		RecoveryPasswordPage,
+		SignUpPage,
 		// Dashboard
 		Dashboard,
 		HomePage,
@@ -55,6 +59,7 @@ import { ProfilePage } from '../pages/dashboard/profile/profile';
 		StatusBar,
 		SplashScreen,
 		{ provide: ErrorHandler, useClass: IonicErrorHandler },
+		// Dialogs,
 	]
 })
 export class AppModule {}
