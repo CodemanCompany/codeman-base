@@ -1,6 +1,7 @@
 // Ionic
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -9,7 +10,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 // import { Dialogs } from '@ionic-native/dialogs';
 
 // Services
-
+import { APIService } from './service/api.service';
+import { StorageService } from './service/storage.service';
 
 // Components
 import { App } from './app.component';
@@ -42,6 +44,7 @@ import { ProfilePage } from '../pages/dashboard/profile/profile';
 		BrowserModule,
 		IonicModule.forRoot( App ),
 		// IonicModule.forRoot( Dashboard ),
+		HttpClientModule,
 	],
 	bootstrap: [ IonicApp ],
 	entryComponents: [
@@ -59,7 +62,11 @@ import { ProfilePage } from '../pages/dashboard/profile/profile';
 		StatusBar,
 		SplashScreen,
 		{ provide: ErrorHandler, useClass: IonicErrorHandler },
+		// Native
 		// Dialogs,
+		// Codeman
+		APIService,
+		StorageService,
 	]
 })
 export class AppModule {}

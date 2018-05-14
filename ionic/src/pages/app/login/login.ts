@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 // import { Dialogs } from '@ionic-native/dialogs';
-// import { APIService } from '../../app/service/api.service';
+import { APIService } from '../../../app/service/api.service';
 
 import { Dashboard } from '../../../app/dashboard.component';
 import { RecoveryPasswordPage } from '../recovery-password/recovery-password';
@@ -13,7 +13,7 @@ import { SignUpPage } from '../sign-up/sign-up';
 } )
 export class LoginPage {
 	constructor(
-		// private apiService: APIService,
+		private apiService: APIService,
 		// private dialogs: Dialogs,
 		private navCtrl: NavController
 	) {}	// end constructor
