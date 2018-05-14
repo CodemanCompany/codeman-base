@@ -1,4 +1,9 @@
 # Ionic Base
 
-# Clone
+# Clone repository
 
+```bash
+npm install
+ionic serve
+# ionic cordova prepare
+```
