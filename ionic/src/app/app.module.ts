@@ -18,9 +18,9 @@ import { App } from './app.component';
 import { Dashboard } from './dashboard.component';
 
 // Pages
-import { LoginPage } from '../pages/app/login/login';
-import { RecoveryPasswordPage } from '../pages/app/recovery-password/recovery-password';
-import { SignUpPage } from '../pages/app/sign-up/sign-up';
+import { LoginPage } from '../pages/landing/login/login';
+import { RecoveryPasswordPage } from '../pages/landing/recovery-password/recovery-password';
+import { SignUpPage } from '../pages/landing/sign-up/sign-up';
 
 import { HomePage } from '../pages/dashboard/home/home';
 import { ProfilePage } from '../pages/dashboard/profile/profile';
@@ -30,7 +30,7 @@ import { ProfilePage } from '../pages/dashboard/profile/profile';
 
 @NgModule({
 	declarations: [
-		// App
+		// Landing
 		App,
 		LoginPage,
 		RecoveryPasswordPage,
@@ -48,7 +48,7 @@ import { ProfilePage } from '../pages/dashboard/profile/profile';
 	],
 	bootstrap: [ IonicApp ],
 	entryComponents: [
-		// App
+		// Landing
 		App,
 		LoginPage,
 		RecoveryPasswordPage,
