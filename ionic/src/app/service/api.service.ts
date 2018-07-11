@@ -31,9 +31,9 @@ export class APIService {
 		return httpParams;
 	}	// end method
 
-	private getHeaders(): HttpHeaders {
+	private getHeaders( isGET: boolean = false ): HttpHeaders {
 		return new HttpHeaders( {
-			"Content-Type": "application/x-www-form-urlencoded",
+			"Content-Type": isGET ? "x-www-form-urlencoded" : "application/json",
 			"Authorization": "Bearer " + this.token
 		} );
 	}	// end method
@@ -47,7 +47,7 @@ export class APIService {
 	}	// end method
 
 	public get( endpoint: string, data: any = {} ): any {
-		let headers = this.getHeaders();
+		let headers = this.getHeaders( true );
 		let params = this.formData( data );
 		return this.httpClient.get( this.url + endpoint, { headers, params } );
 	}	// end method
@@ -58,12 +58,12 @@ export class APIService {
 
 	public post( endpoint: string, data: any = {} ): any {
 		let headers = this.getHeaders();
-		return this.httpClient.post( this.url + endpoint, this.formData( data ), { headers } );
+		return this.httpClient.post( this.url + endpoint, data, { headers } );
 	}	// end method
 
 	public put( endpoint: string, data: any = {} ): any {
 		let headers = this.getHeaders();
-		return this.httpClient.put( this.url + endpoint, this.formData( data ), { headers } );
+		return this.httpClient.put( this.url + endpoint, data, { headers } );
 	}	// end method
 
 	public setToken( token: string ) {
