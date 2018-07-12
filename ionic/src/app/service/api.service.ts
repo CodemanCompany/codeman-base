@@ -5,7 +5,7 @@ import { StorageService } from './storage.service';
 
 @Injectable()
 export class APIService {
-	private url: string = '//127.0.0.1/';
+	private url: string = '//127.0.0.1';
 	private token: string = "CODEMAN_TOKEN";
 	
 	constructor(
@@ -53,6 +53,16 @@ export class APIService {
 	}	// end method
 
 	public getToken(): string {
+
+		if( this.token === "CODEMAN_TOKEN" )	{
+
+			//Obtener token
+			let token = this.storageService.getData( "token" );
+			if( token !== null &&
+				token !== undefined )
+				this.token = token;
+			
+		}	//end if
 		return this.token;
 	}	// end method
 
@@ -68,5 +78,8 @@ export class APIService {
 
 	public setToken( token: string ) {
 		this.token = token;
+		
+		//Almacenar en local
+		this.storageService.saveData( "token", token );
 	}	// end method
 }	// end class
