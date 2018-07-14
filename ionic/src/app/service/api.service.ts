@@ -5,13 +5,15 @@ import { StorageService } from './storage.service';
 
 @Injectable()
 export class APIService {
-	private url: string = '//127.0.0.1';
+	private url: string = '';
 	private token: string = "CODEMAN_TOKEN";
 	
 	constructor(
 		private httpClient: HttpClient,
 		public storageService: StorageService,
 	) {
+
+
 	}	// end constructor
 
 	private formData( data: any = {} ): any {
@@ -32,6 +34,9 @@ export class APIService {
 	}	// end method
 
 	private getHeaders( isGET: boolean = false ): HttpHeaders {
+		
+		this.getToken();
+
 		return new HttpHeaders( {
 			"Content-Type": isGET ? "x-www-form-urlencoded" : "application/json",
 			"Authorization": "Bearer " + this.token
@@ -39,7 +44,7 @@ export class APIService {
 	}	// end method
 
 	public check( response: any ) {
-		return response.result && response.result === 'success';
+		return response.status && response.status === 'success';
 	}	// end method
 
 	public delete( endpoint: string, data: any = {} ): any {
@@ -52,17 +57,8 @@ export class APIService {
 		return this.httpClient.get( this.url + endpoint, { headers, params } );
 	}	// end method
 
-	public getToken(): string {
-
-		if( this.token === "CODEMAN_TOKEN" )	{
-
-			//Obtener token
-			let token = this.storageService.getData( "token" );
-			if( token !== null &&
-				token !== undefined )
-				this.token = token;
-			
-		}	//end if
+	public getToken(): string  {
+		this.token = this.storageService.getData( 'token' ) || '';
 		return this.token;
 	}	// end method
 
@@ -78,8 +74,7 @@ export class APIService {
 
 	public setToken( token: string ) {
 		this.token = token;
-		
-		//Almacenar en local
 		this.storageService.saveData( "token", token );
 	}	// end method
+
 }	// end class
