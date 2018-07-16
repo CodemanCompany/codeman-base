@@ -5,15 +5,13 @@ import { StorageService } from './storage.service';
 
 @Injectable()
 export class APIService {
-	private url: string = '';
-	private token: string = "CODEMAN_TOKEN";
+	private url: string = '//127.0.0.1';
+	private token: string = 'CODEMAN_TOKEN';
 	
 	constructor(
 		private httpClient: HttpClient,
 		public storageService: StorageService,
 	) {
-
-
 	}	// end constructor
 
 	private formData( data: any = {} ): any {
@@ -34,7 +32,6 @@ export class APIService {
 	}	// end method
 
 	private getHeaders( isGET: boolean = false ): HttpHeaders {
-		
 		this.getToken();
 
 		return new HttpHeaders( {
@@ -74,7 +71,6 @@ export class APIService {
 
 	public setToken( token: string ) {
 		this.token = token;
-		this.storageService.saveData( "token", token );
+		this.storageService.saveData( 'token', token );
 	}	// end method
-
 }	// end class
