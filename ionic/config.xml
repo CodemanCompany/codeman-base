@@ -2,7 +2,7 @@
 <widget id="company.codeman.app" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>App Name</name>
     <description>An awesome Ionic/Cordova app.</description>
-    <author email="info@codeman.company" href="https://codeman.company/">Codeman Company</author>
+    <author email="support@codeman.company" href="https://codeman.company/">Codeman Team</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />

@@ -42,7 +42,10 @@ import { ProfilePage } from '../pages/dashboard/profile/profile';
 	],
 	imports: [
 		BrowserModule,
-		IonicModule.forRoot( App ),
+		IonicModule.forRoot( App, {
+			"scrollAssist": false,
+			"autoFocusAssist": false
+		} ),
 		// IonicModule.forRoot( Dashboard ),
 		HttpClientModule,
 	],

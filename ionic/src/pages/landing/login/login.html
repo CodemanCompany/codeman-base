@@ -7,7 +7,12 @@
 <ion-content class="main-content" fullscreen="true" no-bounce padding>
 	<h1 text-center>Title</h1>
 
-	<button ion-button (click)="action()">Sign in</button>
+	<form [formGroup]="form">
+		<ion-input #email formControlName="email" placeholder="Correo electrónico" type="email"></ion-input>
+		<ion-input #password formControlName="password" placeholder="Contraseña" type="password"></ion-input>
+
+		<button ion-button (click)="action()">Sign In</button>
+	</form>
 
 	<br />
 
