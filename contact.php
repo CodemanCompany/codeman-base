@@ -110,7 +110,7 @@ class Contact implements Codeman {
 
 try {
 	// $contact = new Contact( [ 'email', 'message', 'name', 'subject', 'thanks', 'delivery' ] );
-	// $contact -> validate_request( '6LctLUAUAAAAAJy2VMq8F5PzVAVWhCBFqop0acY_' );
+	// $contact -> validate_request( '' );
 }	// end class
 catch ( Exception $error ) {
 	echo json_encode( [
